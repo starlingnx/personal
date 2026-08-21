@@ -1,13 +1,13 @@
-/* --- 1. CẤU HÌNH CHUNG & NỀN GRADIENT CHUYỂN ĐỘNG --- */
+/* --- 1. CẤU HÌNH CHUNG & NỀN GRADIENT CHUYỂN ĐỘNG iOS 26 --- */
 * {
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #11998e);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(135deg, #0f0f1e 0%, #1a1a3e 25%, #0d2d5f 50%, #1a3a52 75%, #0f1f2e 100%);
     background-size: 400% 400%;
-    animation: gradientBG 12s ease infinite;
+    animation: gradientBG 16s ease infinite;
     color: #ffffff;
     display: flex;
     justify-content: center;
@@ -15,12 +15,36 @@ body {
     min-height: 100vh;
     padding: 40px 20px;
     margin: 0;
+    overflow: hidden;
 }
 
 @keyframes gradientBG {
     0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+    25% { background-position: 100% 50%; }
+    50% { background-position: 100% 100%; }
+    75% { background-position: 0% 100%; }
     100% { background-position: 0% 50%; }
+}
+
+/* Animated background blur layer */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 50%, rgba(100, 150, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(100, 200, 255, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+    animation: overlayShift 8s ease infinite;
+    z-index: 1;
+}
+
+@keyframes overlayShift {
+    0% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+    100% { opacity: 0.3; }
 }
 
 /* --- 2. KHUNG NỘI DUNG (CONTAINER) --- */
@@ -28,6 +52,28 @@ body {
     text-align: center;
     width: 100%;
     max-width: 420px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Bling effect background */
+.container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(100, 200, 255, 0.05) 0%, transparent 70%);
+    animation: bling 20s ease infinite;
+    pointer-events: none;
+    border-radius: 50%;
+}
+
+@keyframes bling {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(30px, -30px) scale(1.1); }
+    100% { transform: translate(0, 0) scale(1); }
 }
 
 /* --- 3. THÔNG TIN CÁ NHÂN --- */
@@ -37,26 +83,38 @@ body {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 12px;
-    border: 3px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    animation: fadeInUp 0.8s ease forwards;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(100, 150, 255, 0.2),
+                0 0 20px rgba(100, 200, 255, 0.15);
+    animation: fadeInUp 1s ease-out forwards, profileGlow 3s ease-in-out infinite;
+}
+
+@keyframes profileGlow {
+    0%, 100% { box-shadow: 0 8px 32px rgba(100, 150, 255, 0.2), 0 0 20px rgba(100, 200, 255, 0.15); }
+    50% { box-shadow: 0 8px 40px rgba(100, 150, 255, 0.35), 0 0 30px rgba(100, 200, 255, 0.25); }
 }
 
 h1 {
-    font-size: 1.5rem;
-    margin: 8px 0 4px 0;
-    letter-spacing: 0.5px;
-    animation: fadeInUp 0.8s ease forwards;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 12px 0 6px 0;
+    letter-spacing: 0.3px;
+    animation: fadeInUp 1s ease-out 0.1s forwards;
+    background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.8) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .bio {
     font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.75);
-    margin-bottom: 28px;
-    animation: fadeInUp 0.8s ease forwards;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 32px;
+    animation: fadeInUp 1s ease-out 0.2s forwards;
+    letter-spacing: 0.2px;
 }
 
-/* --- 4. NÚT BẤM KÍNH MỜ (GLASSMORPHISM) & SHIMMER --- */
+/* --- 4. NÚT BẤM KÍNH MỜ (iOS GLASSMORPHISM) & EFFECTS --- */
 .link-btn {
     display: flex;
     align-items: center;
@@ -64,31 +122,36 @@ h1 {
     position: relative;
     
     background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
     
     color: white;
     text-decoration: none;
-    padding: 14px 20px;
-    margin: 14px 0;
-    border-radius: 30px;
+    padding: 16px 24px;
+    margin: 12px 0;
+    border-radius: 16px;
     font-weight: 600;
     font-size: 0.95rem;
     overflow: hidden;
     
     opacity: 0;
-    animation: fadeInUp 0.8s ease forwards;
-    transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: fadeInUp 1s ease-out forwards;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    
+    /* Subtle glow effect */
+    box-shadow: 0 8px 24px rgba(100, 150, 255, 0.1),
+                inset 0 0 20px rgba(255, 255, 255, 0.05);
 }
 
 .btn-icon {
     font-size: 1.2rem;
     position: absolute;
-    left: 20px;
+    left: 24px;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* Vệt sáng quét qua (Shimmer Effect) */
+/* Shimmer Effect iOS-style */
 .link-btn::before {
     content: '';
     position: absolute;
@@ -96,35 +159,125 @@ h1 {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: left 0.6s ease;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.25), 
+        transparent);
+    transition: left 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .link-btn:hover::before {
     left: 100%;
 }
 
+/* Glow layer */
+.link-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(100, 200, 255, 0.3) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
 .link-btn:hover {
-    transform: scale(1.03) translateY(-3px);
-    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05) translateY(-4px);
+    background: rgba(255, 255, 255, 0.15);
     border-color: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 16px 40px rgba(100, 150, 255, 0.25),
+                inset 0 0 30px rgba(255, 255, 255, 0.1),
+                0 0 20px rgba(100, 200, 255, 0.2);
+}
+
+.link-btn:hover::after {
+    opacity: 1;
+}
+
+.link-btn:hover .btn-icon {
+    transform: scale(1.2) rotate(-10deg);
+}
+
+.link-btn:active {
+    transform: scale(0.98) translateY(-2px);
+    box-shadow: 0 8px 20px rgba(100, 150, 255, 0.15),
+                inset 0 0 20px rgba(255, 255, 255, 0.08);
 }
 
 /* --- 5. HIỆU ỨNG TRUỢT LÊN TỪNG NÚT (STAGGERED FADE-IN) --- */
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(25px);
+        transform: translateY(30px);
+        filter: blur(10px);
     }
     to {
         opacity: 1;
         transform: translateY(0);
+        filter: blur(0);
     }
 }
 
-.link-btn:nth-child(1) { animation-delay: 0.2s; }
-.link-btn:nth-child(2) { animation-delay: 0.35s; }
-.link-btn:nth-child(3) { animation-delay: 0.5s; }
-.link-btn:nth-child(4) { animation-delay: 0.65s; }
-.link-btn:nth-child(5) { animation-delay: 0.8s; }
+.link-btn:nth-child(1) { animation-delay: 0.3s; }
+.link-btn:nth-child(2) { animation-delay: 0.45s; }
+.link-btn:nth-child(3) { animation-delay: 0.6s; }
+.link-btn:nth-child(4) { animation-delay: 0.75s; }
+.link-btn:nth-child(5) { animation-delay: 0.9s; }
+
+/* --- 6. RESPONSIVE & TABLET/MOBILE --- */
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+    
+    .link-btn {
+        padding: 14px 20px;
+        font-size: 0.9rem;
+        margin: 10px 0;
+    }
+    
+    h1 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 30px 16px;
+    }
+    
+    .profile-pic {
+        width: 90px;
+        height: 90px;
+    }
+    
+    h1 {
+        font-size: 1.4rem;
+    }
+    
+    .link-btn {
+        padding: 12px 18px;
+        font-size: 0.85rem;
+        margin: 8px 0;
+        border-radius: 12px;
+    }
+}
+
+/* --- 7. DARK MODE & ACCESSIBILITY --- */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@supports (backdrop-filter: blur(10px)) {
+    .link-btn {
+        background: rgba(255, 255, 255, 0.08);
+    }
+}
