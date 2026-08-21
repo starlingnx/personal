@@ -1,24 +1,62 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STARLINGNX | Linktree</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>STARLINGN | Linktree</title>
+  <meta name="description" content="Starling Nguyễn — Music Producer (EDM & Phonk). Nghe nhạc, xem dự án và liên hệ.">
+  <link rel="canonical" href="https://starlingnx.github.io/Personal_information/">
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="STARLINGN | Starling Nguyễn">
+  <meta property="og:description" content="Music Producer — EDM & Phonk. Nghe nhạc, xem dự án và liên hệ.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/starlingnx/Personal_information/main/avatar.jpg">
+  <meta property="og:url" content="https://starlingnx.github.io/Personal_information/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Đổi 'avatar.jpg' thành đường dẫn ảnh thực tế của bạn -->
-        <img src="avatar.jpg" alt="Avatar" class="profile-pic">
-        
-        <h1>Starling Nguyễn</h1>
-        <p>Music Producer | EDM & Phonk</p>
-        
-        <div class="links">
-            <a href="https://spotify.com/..." class="link-btn" target="_blank">Nghe nhạc trên Spotify</a>
-            <a href="https://..." class="link-btn" target="_blank">Shinrai Records Music Group</a>
-            <a href="https://..." class="link-btn" target="_blank">Các dự án lập trình</a>
-        </div>
-    </div>
+  <main class="container" role="main">
+    <!-- Thay avatar.jpg bằng đường dẫn ảnh thật; thêm width/height và lazy loading -->
+    <img src="avatar.jpg" alt="Ảnh đại diện của Starling Nguyễn" class="profile-pic" loading="lazy" width="200" height="200">
+    <h1>Starling Nguyễn</h1>
+    <p>Music Producer | EDM &amp; Phonk</p>
+
+    <nav class="links" aria-label="Các liên kết chính">
+      <!-- Thay các href placeholder bằng link thật; target _blank có rel để an toàn -->
+      <a href="https://open.spotify.com/" class="link-btn" target="_blank" rel="noopener noreferrer" aria-label="Nghe nhạc trên Spotify (mở tab mới)">
+        Nghe nhạc trên Spotify
+      </a>
+      <a href="https://" class="link-btn" target="_blank" rel="noopener noreferrer" aria-label="Shinrai Records Music Group (mở tab mới)">
+        Shinrai Records Music Group
+      </a>
+      <a href="https://github.com/starlingnx" class="link-btn" target="_blank" rel="noopener noreferrer" aria-label="Các dự án lập trình (mở tab mới)">
+        Các dự án lập trình
+      </a>
+    </nav>
+
+    <footer aria-label="Liên hệ">
+      <!-- Nếu muốn hiển thị email, dùng mailto: hoặc form liên hệ; cân nhắc obfuscation để tránh spam -->
+      <p>© <span id="year"></span> Starling Nguyễn</p>
+    </footer>
+  </main>
+
+  <script>
+    // small UX: cập nhật năm tự động
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Structured data: Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Starling Nguyễn",
+    "url": "https://starlingnx.github.io/Personal_information/",
+    "jobTitle": "Music Producer",
+    "description": "Music Producer — EDM & Phonk.",
+    "image": "https://raw.githubusercontent.com/starlingnx/Personal_information/main/avatar.jpg"
+  }
+  </script>
 </body>
 </html>
