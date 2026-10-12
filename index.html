@@ -20,7 +20,8 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="site-header">
+    <a class="skip-link" href="#main">Bỏ qua menu</a>
+    <header class="site-header" role="banner">
       <div class="container nav-wrap">
         <a href="#top" class="brand">STARLINGN</a>
         <nav class="nav" aria-label="Main navigation">
@@ -32,8 +33,8 @@
       </div>
     </header>
 
-    <main id="top">
-      <section class="hero">
+    <main id="main" class="page-main" role="main">
+      <section class="hero" id="top">
         <div class="container hero-grid">
           <div class="hero-copy">
             <p class="eyebrow">Music Producer • EDM • Phonk</p>
@@ -213,7 +214,7 @@
       </section>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer" role="contentinfo">
       <div class="container footer-inner">
         <p>© <span id="year"></span> Starling Nguyễn</p>
         <p>Made with sound & love.</p>
@@ -222,6 +223,7 @@
 
     <script>
       document.getElementById('year').textContent = new Date().getFullYear();
+      document.documentElement.style.scrollBehavior = 'smooth';
     </script>
   </body>
 </html>
