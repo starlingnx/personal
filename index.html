@@ -1,62 +1,227 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>STARLINGN | Linktree</title>
-  <meta name="description" content="Starling Nguyễn — Music Producer (EDM & Phonk). Nghe nhạc, xem dự án và liên hệ.">
-  <link rel="canonical" href="https://starlingnx.github.io/Personal_information/">
-  <!-- Open Graph / Social -->
-  <meta property="og:title" content="STARLINGN | Starling Nguyễn">
-  <meta property="og:description" content="Music Producer — EDM & Phonk. Nghe nhạc, xem dự án và liên hệ.">
-  <meta property="og:image" content="https://raw.githubusercontent.com/starlingnx/Personal_information/main/avatar.jpg">
-  <meta property="og:url" content="https://starlingnx.github.io/Personal_information/">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="favicon.ico">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <main class="container" role="main">
-    <!-- Thay avatar.jpg bằng đường dẫn ảnh thật; thêm width/height và lazy loading -->
-    <img src="avatar.jpg" alt="Ảnh đại diện của Starling Nguyễn" class="profile-pic" loading="lazy" width="200" height="200">
-    <h1>Starling Nguyễn</h1>
-    <p>Music Producer | EDM &amp; Phonk</p>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Starling Nguyễn | Portfolio</title>
+    <meta
+      name="description"
+      content="Starling Nguyễn — Music Producer & Portfolio. EDM, Phonk, sound design, projects and contact."
+    />
+    <meta property="og:title" content="Starling Nguyễn | Portfolio" />
+    <meta
+      property="og:description"
+      content="Music Producer — EDM & Phonk. Explore projects, tracks and contact."
+    />
+    <meta property="og:image" content="https://raw.githubusercontent.com/starlingnx/Personal_information/main/avatar.jpg" />
+    <meta property="og:url" content="https://starlingnx.github.io/Personal_information/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="#top" class="brand">STARLINGN</a>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#music">Music</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
 
-    <nav class="links" aria-label="Các liên kết chính">
-      <!-- Thay các href placeholder bằng link thật; target _blank có rel để an toàn -->
-      <a href="https://open.spotify.com/" class="link-btn" target="_blank" rel="noopener noreferrer" aria-label="Nghe nhạc trên Spotify (mở tab mới)">
-        Nghe nhạc trên Spotify
-      </a>
-      <a href="https://" class="link-btn" target="_blank" rel="noopener noreferrer" aria-label="Shinrai Records Music Group (mở tab mới)">
-        Shinrai Records Music Group
-      </a>
-      <a href="https://github.com/starlingnx" class="link-btn" target="_blank" rel="noopener noreferrer" aria-label="Các dự án lập trình (mở tab mới)">
-        Các dự án lập trình
-      </a>
-    </nav>
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Music Producer • EDM • Phonk</p>
+            <h1>Starling Nguyễn</h1>
+            <p class="lead">
+              Producer, sound designer và creative artist mang đến âm thanh mạnh, hiện đại
+              và có tính nhận diện rõ ràng.
+            </p>
 
-    <footer aria-label="Liên hệ">
-      <!-- Nếu muốn hiển thị email, dùng mailto: hoặc form liên hệ; cân nhắc obfuscation để tránh spam -->
-      <p>© <span id="year"></span> Starling Nguyễn</p>
+            <div class="cta-row">
+              <a class="btn" href="#projects">Xem dự án</a>
+              <a class="btn btn-alt" href="#contact">Liên hệ</a>
+            </div>
+
+            <ul class="stats" aria-label="Thông tin nổi bật">
+              <li>
+                <strong>5+</strong>
+                <span>năm làm music</span>
+              </li>
+              <li>
+                <strong>20+</strong>
+                <span>tracks & demo</span>
+              </li>
+              <li>
+                <strong>∞</strong>
+                <span>ý tưởng mới</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="hero-visual">
+            <div class="avatar-frame">
+              <img src="avatar.jpg" alt="Ảnh Starling Nguyễn" class="avatar" width="360" height="360" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">About</p>
+            <h2>Về tôi</h2>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-copy">
+              <p>
+                Mình là Starling Nguyễn, một music producer chuyên về EDM & Phonk với
+                phong cách hiện đại, hầm hố và đầy cảm xúc. Mình làm việc từ sáng tác
+                melody, sound design, production cho đến mix & mastering.
+              </p>
+              <p>
+                Mình thích các dự án có TONE rõ ràng, groove mạnh và không khí đặc biệt —
+                từ những bản nhạc điện tử tối giản đến các project có tính biểu cảm và
+                cường độ cảm xúc cao.
+              </p>
+            </div>
+
+            <div class="info-stack">
+              <div class="info-card">
+                <span class="info-label">Specialty</span>
+                <strong>EDM • Phonk • Sound Design</strong>
+              </div>
+              <div class="info-card">
+                <span class="info-label">Tools</span>
+                <strong>Ableton Live • FL Studio</strong>
+              </div>
+              <div class="info-card">
+                <span class="info-label">Base</span>
+                <strong>Vietnam</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section section-alt">
+        <div class="container">
+          <div class="section-heading split">
+            <div>
+              <p class="eyebrow">Projects</p>
+              <h2>Dự án tiêu biểu</h2>
+            </div>
+          </div>
+
+          <div class="projects-grid">
+            <article class="project-card">
+              <img src="https://images.unsplash.com/photo-1504805572947-34fad45aed93?auto=format&fit=crop&w=1000&q=80" alt="Neon Drift cover" loading="lazy" />
+              <div class="project-body">
+                <span class="project-tag">Music</span>
+                <h3>Neon Drift</h3>
+                <p>Producer / EDM / Night drive synthwave mix.</p>
+                <a href="https://open.spotify.com/" target="_blank" rel="noopener noreferrer">Listen</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <img src="https://images.unsplash.com/photo-1499084732479-de2c02d45fc4?auto=format&fit=crop&w=1000&q=80" alt="Midnight Circuit cover" loading="lazy" />
+              <div class="project-body">
+                <span class="project-tag">Soundtrack</span>
+                <h3>Midnight Circuit</h3>
+                <p>Soundtrack cho dự án indie, dark cinematic energy.</p>
+                <a href="https://open.spotify.com/" target="_blank" rel="noopener noreferrer">View</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1000&q=80" alt="WaveLab cover" loading="lazy" />
+              <div class="project-body">
+                <span class="project-tag">Web / Tool</span>
+                <h3>WaveLab</h3>
+                <p>Audio experiment / texture generator / creative prototype.</p>
+                <a href="https://github.com/starlingnx" target="_blank" rel="noopener noreferrer">GitHub</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="music" class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Music</p>
+            <h2>Nghe nhạc</h2>
+          </div>
+
+          <div class="music-wrap">
+            <iframe
+              src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M?utm_source=generator"
+              width="100%"
+              height="152"
+              frameborder="0"
+              allowtransparency="true"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+              title="Spotify playlist"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section accent-section">
+        <div class="container contact-grid">
+          <div class="contact-panel">
+            <p class="eyebrow">Contact</p>
+            <h2>Liên hệ</h2>
+            <p>
+              Nếu bạn muốn hợp tác, lên ý tưởng, làm track, hoặc cần âm nhạc cho dự án,
+              inbox mình qua email hoặc các kênh dưới đây.
+            </p>
+
+            <ul class="contact-links">
+              <li><a href="mailto:starling.nguyen@example.com">starling.nguyen@example.com</a></li>
+              <li><a href="https://github.com/starlingnx" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+              <li><a href="https://open.spotify.com/" target="_blank" rel="noopener noreferrer">Spotify</a></li>
+              <li><a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            </ul>
+          </div>
+
+          <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+            <label>
+              <span>Name</span>
+              <input type="text" name="name" placeholder="Tên của bạn" required />
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" placeholder="you@example.com" required />
+            </label>
+            <label>
+              <span>Message</span>
+              <textarea name="message" rows="5" placeholder="Viết dự án / ý tưởng của bạn..." required></textarea>
+            </label>
+            <button type="submit" class="btn">Gửi</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Starling Nguyễn</p>
+        <p>Made with sound & love.</p>
+      </div>
     </footer>
-  </main>
 
-  <script>
-    // small UX: cập nhật năm tự động
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-
-  <!-- Structured data: Person -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Starling Nguyễn",
-    "url": "https://starlingnx.github.io/Personal_information/",
-    "jobTitle": "Music Producer",
-    "description": "Music Producer — EDM & Phonk.",
-    "image": "https://raw.githubusercontent.com/starlingnx/Personal_information/main/avatar.jpg"
-  }
-  </script>
-</body>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>
