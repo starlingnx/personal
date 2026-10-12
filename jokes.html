@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Random Joke Generator — Starling Nguyễn</title>
+    <meta name="description" content="Trang tạo joke ngẫu nhiên — dùng Official Joke API" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Small page-specific styles to keep things self-contained */
+      .joke-app { padding: 48px 0; display:flex; justify-content:center; }
+      .joke-card { width:100%; max-width:720px; background: rgba(255,255,255,0.03); padding:24px; border-radius:12px; box-shadow:0 10px 40px rgba(0,0,0,0.6); text-align:left; }
+      .joke-setup { font-size:1.25rem; margin-bottom:12px; color:#e9f6ff; }
+      .joke-punchline { font-size:1.1rem; margin-top:8px; color:var(--muted); }
+      .joke-controls { display:flex; gap:10px; margin-top:16px; flex-wrap:wrap; }
+      .small { font-size:0.9rem; padding:8px 12px; border-radius:10px; }
+      .muted { color: rgba(255,255,255,0.75); }
+      .loading { opacity:0.8; }
+      .error { color: #ffd6d6; background: rgba(255,0,0,0.06); padding:8px 12px; border-radius:8px; }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="/" class="brand">STARLINGN</a>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="/index.html">Home</a>
+          <a href="/jokes.html" aria-current="page">Jokes</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="joke-app container" id="main">
+      <div class="joke-card" role="region" aria-label="Random joke generator">
+        <h1 style="margin-top:0">Random Joke Generator</h1>
+        <p class="muted">Lấy joke ngẫu nhiên từ <a href="https://official-joke-api.appspot.com/" target="_blank" rel="noopener noreferrer">Official Joke API</a>.</p>
+
+        <div id="jokeArea">
+          <p id="setup" class="joke-setup">Nhấn "Get joke" để bắt đầu.</p>
+          <p id="punchline" class="joke-punchline" hidden></p>
+        </div>
+
+        <div id="status" aria-live="polite" style="margin-top:8px"></div>
+
+        <div class="joke-controls">
+          <button id="getJoke" class="small btn">Get joke</button>
+          <button id="showPunchline" class="small btn btn-alt" disabled>Show punchline</button>
+          <button id="copyBtn" class="small" disabled>Copy</button>
+          <button id="tweetBtn" class="small" disabled>Share</button>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p class="muted">© <span id="year"></span> Starling Nguyễn</p>
+      </div>
+    </footer>
+
+    <script src="jokes.js"></script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </body>
+</html>
